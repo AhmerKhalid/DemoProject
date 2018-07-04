@@ -4,250 +4,247 @@
 }
 
 <style>
+        @@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+        @@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
-    @@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
-    @@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
-
-    main {
-        min-width: 320px;
-        max-width: 800px;
-        padding: 50px;
-        margin: 0 auto;
-        background: #fff;
-    }
-
-    section {
-        display: none;
-        padding: 20px 0 0;
-        border-top: 1px solid #ddd;
-    }
-
-    input {
-        display: none;
-    }
-
-    label {
-        display: inline-block;
-        margin: 0 0 -1px;
-        padding: 15px 25px;
-        font-weight: 600;
-        text-align: center;
-        color: #bbb;
-        border: 1px solid transparent;
-    }
-
-        label:before {
-            font-family: fontawesome;
-            font-weight: normal;
-            margin-right: 10px;
+        main {
+            min-width: 320px;
+            max-width: 800px;
+            padding: 50px;
+            margin: 0 auto;
+            background: #fff;
         }
 
-        label[for*='1']:before {
-            content: '\f1cb';
+        section {
+            display: none;
+            padding: 20px 0 0;
+            border-top: 1px solid #ddd;
         }
 
-        label[for*='2']:before {
-            content: '\f17d';
+        input {
+            display: none;
         }
 
-        label[for*='3']:before {
-            content: '\f16b';
-        }
-
-        label[for*='4']:before {
-            content: '\f1a9';
-        }
-
-        label:hover {
-            color: #888;
-            cursor: pointer;
-        }
-
-    input:checked + label {
-        color: #555;
-        border: 1px solid #ddd;
-        border-top: 2px solid orange;
-        border-bottom: 1px solid #fff;
-    }
-
-    #tab1:checked ~ #content1,
-    #tab2:checked ~ #content2,
-    #tab3:checked ~ #content3,
-    #tab4:checked ~ #content4 {
-        display: block;
-    }
-
-    @@media screen and (max-width: 650px) {
         label {
-            font-size: 0;
+            display: inline-block;
+            margin: 0 0 -1px;
+            padding: 15px 25px;
+            font-weight: 600;
+            text-align: center;
+            color: #bbb;
+            border: 1px solid transparent;
         }
 
             label:before {
-                margin: 0;
-                font-size: 18px;
+                font-family: fontawesome;
+                font-weight: normal;
+                margin-right: 10px;
             }
-    }
 
-    @@media screen and (max-width: 400px) {
-        label {
-            padding: 15px;
+            label[for*='1']:before {
+                content: '\f1cb';
+            }
+
+            label[for*='2']:before {
+                content: '\f17d';
+            }
+
+            label[for*='3']:before {
+                content: '\f16b';
+            }
+
+            label[for*='4']:before {
+                content: '\f1a9';
+            }
+
+            label:hover {
+                color: #888;
+                cursor: pointer;
+            }
+
+        input:checked + label {
+            color: #555;
+            border: 1px solid #ddd;
+            border-top: 2px solid orange;
+            border-bottom: 1px solid #fff;
         }
+
+        #tab1:checked ~ #content1,
+        #tab2:checked ~ #content2,
+        #tab3:checked ~ #content3,
+        #tab4:checked ~ #content4 {
+            display: block;
+        }
+
+        @@media screen and (max-width: 650px) {
+            label {
+                font-size: 0;
+            }
+
+                label:before {
+                    margin: 0;
+                    font-size: 18px;
+                }
+        }
+
+        @@media screen and (max-width: 400px) {
+            label {
+                padding: 15px;
+            }
+        }
+
+        /*new Adjustment..!!
+
+
+
+    @@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-font-smoothing: antialiased;
+      -o-font-smoothing: antialiased;
+      font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
-/*new Adjustment..!!*/
+
+
+    .container {
+      max-width: 400px;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    #contact input[type="text"],
+    #contact input[type="email"],
+    #contact input[type="tel"],
+    #contact input[type="url"],
+    #contact textarea,
+    #contact button[type="submit"] {
+      font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+    }
+
+    #contact {
+      background: #F9F9F9;
+      padding: 25px;
+      margin: 150px 0;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
+
+    #contact h3 {
+      display: block;
+      font-size: 30px;
+      font-weight: 300;
+      margin-bottom: 10px;
+    }
+
+    #contact h4 {
+      margin: 5px 0 15px;
+      display: block;
+      font-size: 13px;
+      font-weight: 400;
+    }
+
+    fieldset {
+      border: medium none !important;
+      margin: 0 0 10px;
+      min-width: 100%;
+      padding: 0;
+      width: 100%;
+    }
+
+    #contact input[type="text"],
+    #contact input[type="email"],
+    #contact input[type="tel"],
+    #contact input[type="url"],
+    #contact textarea {
+      width: 100%;
+      border: 1px solid #ccc;
+      background: #FFF;
+      margin: 0 0 5px;
+      padding: 10px;
+    }
+
+    #contact input[type="text"]:hover,
+    #contact input[type="email"]:hover,
+    #contact input[type="tel"]:hover,
+    #contact input[type="url"]:hover,
+    #contact textarea:hover {
+      -webkit-transition: border-color 0.3s ease-in-out;
+      -moz-transition: border-color 0.3s ease-in-out;
+      transition: border-color 0.3s ease-in-out;
+      border: 1px solid #aaa;
+    }
+
+    #contact textarea {
+      height: 100px;
+      max-width: 100%;
+      resize: none;
+    }
+
+    #contact button[type="submit"] {
+      cursor: pointer;
+      width: 100%;
+      border: none;
+      background: #4CAF50;
+      color: #FFF;
+      margin: 0 0 5px;
+      padding: 10px;
+      font-size: 15px;
+    }
+
+    #contact button[type="submit"]:hover {
+      background: #43A047;
+      -webkit-transition: background 0.3s ease-in-out;
+      -moz-transition: background 0.3s ease-in-out;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    #contact button[type="submit"]:active {
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .copyright {
+      text-align: center;
+    }
+
+    #contact input:focus,
+    #contact textarea:focus {
+      outline: 0;
+      border: 1px solid #aaa;
+    }
+
+    ::-webkit-input-placeholder {
+      color: #888;
+    }
+
+    :-moz-placeholder {
+      color: #888;
+    }
+
+    ::-moz-placeholder {
+      color: #888;
+    }
+
+    :-ms-input-placeholder {
+      color: #888;
+    }
 
 
 
-@@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  -o-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-
-
-.container {
-  max-width: 400px;
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
-}
-
-#contact input[type="text"],
-#contact input[type="email"],
-#contact input[type="tel"],
-#contact input[type="url"],
-#contact textarea,
-#contact button[type="submit"] {
-  font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
-}
-
-#contact {
-  background: #F9F9F9;
-  padding: 25px;
-  margin: 150px 0;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
-
-#contact h3 {
-  display: block;
-  font-size: 30px;
-  font-weight: 300;
-  margin-bottom: 10px;
-}
-
-#contact h4 {
-  margin: 5px 0 15px;
-  display: block;
-  font-size: 13px;
-  font-weight: 400;
-}
-
-fieldset {
-  border: medium none !important;
-  margin: 0 0 10px;
-  min-width: 100%;
-  padding: 0;
-  width: 100%;
-}
-
-#contact input[type="text"],
-#contact input[type="email"],
-#contact input[type="tel"],
-#contact input[type="url"],
-#contact textarea {
-  width: 100%;
-  border: 1px solid #ccc;
-  background: #FFF;
-  margin: 0 0 5px;
-  padding: 10px;
-}
-
-#contact input[type="text"]:hover,
-#contact input[type="email"]:hover,
-#contact input[type="tel"]:hover,
-#contact input[type="url"]:hover,
-#contact textarea:hover {
-  -webkit-transition: border-color 0.3s ease-in-out;
-  -moz-transition: border-color 0.3s ease-in-out;
-  transition: border-color 0.3s ease-in-out;
-  border: 1px solid #aaa;
-}
-
-#contact textarea {
-  height: 100px;
-  max-width: 100%;
-  resize: none;
-}
-
-#contact button[type="submit"] {
-  cursor: pointer;
-  width: 100%;
-  border: none;
-  background: #4CAF50;
-  color: #FFF;
-  margin: 0 0 5px;
-  padding: 10px;
-  font-size: 15px;
-}
-
-#contact button[type="submit"]:hover {
-  background: #43A047;
-  -webkit-transition: background 0.3s ease-in-out;
-  -moz-transition: background 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out;
-}
-
-#contact button[type="submit"]:active {
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-.copyright {
-  text-align: center;
-}
-
-#contact input:focus,
-#contact textarea:focus {
-  outline: 0;
-  border: 1px solid #aaa;
-}
-
-::-webkit-input-placeholder {
-  color: #888;
-}
-
-:-moz-placeholder {
-  color: #888;
-}
-
-::-moz-placeholder {
-  color: #888;
-}
-
-:-ms-input-placeholder {
-  color: #888;
-}
-
-
-
-/*//Radio button...!!!*/
-
-
+    //Radio button...!!!*/
 </style>
 
 
 
 
-<main>
+<div style="padding:30px;">
 
     <input id="tab1" type="radio" name="tabs" checked>
     <label for="tab1">Personal</label>
@@ -261,8 +258,8 @@ fieldset {
 
 
     <section id="content1">
-        <p>Personal</p>
-        <div class="container">
+        @*<p>Personal</p>*@
+        <div class="" style="padding:10px;">
             <form id="contact" action="" method="post">
 
                 <div class="form-group"><input type="text" placeholder="First Name" class="form-control" /></div>
@@ -316,8 +313,8 @@ fieldset {
     </section>
 
     <section id="content2">
-        <p>Experience</p>
-        <div class="container">
+        @*<p>Experience</p>*@
+        <div class="" style="padding:10px;">
             <form id="contact" action="" method="post">
 
                 <div class="form-group"><input type="text" placeholder="Job Title" class="form-control" /></div>
@@ -410,7 +407,7 @@ fieldset {
                         <option>2013</option>
                     </select>
                 </div>
-             
+
                 <div class="form-group">
 
                     <button type="submit" class="form-control" style="background-color:cornflowerblue">Done</button>
@@ -422,8 +419,8 @@ fieldset {
     </section>
 
     <section id="content3">
-        <p>Education</p>
-        <div class="container">
+        @*<p>Education</p>*@
+        <div class="" style="padding:10px;">
             <form id="contact" action="" method="post">
 
                 <div class="form-group"><input type="text" placeholder="Degree Title" class="form-control" /></div>
@@ -502,23 +499,39 @@ fieldset {
                     </select>
                 </div>
                 <div class="form-group">
-                
-                <button type="submit" class="form-control" style="background-color:cornflowerblue" >Done</button>
-                    </div>
+
+                    <button type="submit" class="form-control" style="background-color:cornflowerblue">Done</button>
+                </div>
             </form>
-               
-           
+
+
         </div>
     </section>
 
-    @*<section id="content4">
-            <p>
-                Bacon ipsum dolor sit amet landjaeger sausage brisket, jerky drumstick fatback boudin ball tip turducken. Pork belly meatball t-bone bresaola tail filet mignon kevin turkey ribeye shank flank doner cow kielbasa shankle. Pig swine chicken hamburger, tenderloin turkey rump ball tip sirloin frankfurter meatloaf boudin brisket ham hock. Hamburger venison brisket tri-tip andouille pork belly ball tip short ribs biltong meatball chuck. Pork chop ribeye tail short ribs, beef hamburger meatball kielbasa rump corned beef porchetta landjaeger flank. Doner rump frankfurter meatball meatloaf, cow kevin pork pork loin venison fatback spare ribs salami beef ribs.
-            </p>
-            <p>
-                Jerky jowl pork chop tongue, kielbasa shank venison. Capicola shank pig ribeye leberkas filet mignon brisket beef kevin tenderloin porchetta. Capicola fatback venison shank kielbasa, drumstick ribeye landjaeger beef kevin tail meatball pastrami prosciutto pancetta. Tail kevin spare ribs ground round ham ham hock brisket shoulder. Corned beef tri-tip leberkas flank sausage ham hock filet mignon beef ribs pancetta turkey.
-            </p>
-        </section>*@
+</div>
 
-</main>
+@section scripts{
+    @*<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>*@
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
 
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //swal("Hello world!");
+            var htmltoshow = $("#content1").html();
+            swal({
+                title: '<i>HTML</i> <u>example</u>',
+                type: 'info',
+                html: htmltoshow,
+                showCloseButton: true,
+                showCancelButton: true,
+                focusConfirm: false,
+                confirmButtonText:
+                  '<i class="fa fa-thumbs-up"></i> Great!',
+                confirmButtonAriaLabel: 'Thumbs up, great!',
+                cancelButtonText:
+                  '<i class="fa fa-thumbs-down"></i>',
+                cancelButtonAriaLabel: 'Thumbs down',
+            })
+        })
+    </script>
+}
