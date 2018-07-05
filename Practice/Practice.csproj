@@ -390,6 +390,8 @@
     <Content Include="Views\Admin_DashBoard\Index.cshtml" />
     <Content Include="Views\Home\Admin_Login.cshtml" />
     <Content Include="Views\Shared\_DashboardLayout.cshtml" />
+    <Content Include="Views\Shared\_Edu_Tab_View.cshtml" />
+    <Content Include="Views\Shared\_Exp_Tab_View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

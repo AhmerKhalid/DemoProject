@@ -22,6 +22,16 @@ namespace Practice.Controllers
 
             return View();
         }
+        public ActionResult _Edu_Tab_View()
+        {
+
+            return PartialView();
+        }
+        public ActionResult _Exp_Tab_View()
+        {
+
+            return PartialView();
+        }
         public ActionResult Sign_Up()
         {
 

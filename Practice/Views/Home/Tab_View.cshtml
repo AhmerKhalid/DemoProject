@@ -4,97 +4,97 @@
 }
 
 <style>
-        @@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
-        @@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+    @@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+    @@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 
-        main {
-            min-width: 320px;
-            max-width: 800px;
-            padding: 50px;
-            margin: 0 auto;
-            background: #fff;
+    main {
+        min-width: 320px;
+        max-width: 800px;
+        padding: 50px;
+        margin: 0 auto;
+        background: #fff;
+    }
+
+    section {
+        display: none;
+        padding: 20px 0 0;
+        border-top: 1px solid #ddd;
+    }
+
+    input {
+        display: none;
+    }
+
+    label {
+        display: inline-block;
+        margin: 0 0 -1px;
+        padding: 15px 25px;
+        font-weight: 600;
+        text-align: center;
+        color: #bbb;
+        border: 1px solid transparent;
+    }
+
+        label:before {
+            font-family: fontawesome;
+            font-weight: normal;
+            margin-right: 10px;
         }
 
-        section {
-            display: none;
-            padding: 20px 0 0;
-            border-top: 1px solid #ddd;
+        label[for*='1']:before {
+            content: '\f1cb';
         }
 
-        input {
-            display: none;
+        label[for*='2']:before {
+            content: '\f17d';
         }
 
+        label[for*='3']:before {
+            content: '\f16b';
+        }
+
+        label[for*='4']:before {
+            content: '\f1a9';
+        }
+
+        label:hover {
+            color: #888;
+            cursor: pointer;
+        }
+
+    input:checked + label {
+        color: #555;
+        border: 1px solid #ddd;
+        border-top: 2px solid orange;
+        border-bottom: 1px solid #fff;
+    }
+
+    #tab1:checked ~ #content1,
+    #tab2:checked ~ #content2,
+    #tab3:checked ~ #content3,
+    #tab4:checked ~ #content4 {
+        display: block;
+    }
+
+    @@media screen and (max-width: 650px) {
         label {
-            display: inline-block;
-            margin: 0 0 -1px;
-            padding: 15px 25px;
-            font-weight: 600;
-            text-align: center;
-            color: #bbb;
-            border: 1px solid transparent;
+            font-size: 0;
         }
 
             label:before {
-                font-family: fontawesome;
-                font-weight: normal;
-                margin-right: 10px;
+                margin: 0;
+                font-size: 18px;
             }
+    }
 
-            label[for*='1']:before {
-                content: '\f1cb';
-            }
-
-            label[for*='2']:before {
-                content: '\f17d';
-            }
-
-            label[for*='3']:before {
-                content: '\f16b';
-            }
-
-            label[for*='4']:before {
-                content: '\f1a9';
-            }
-
-            label:hover {
-                color: #888;
-                cursor: pointer;
-            }
-
-        input:checked + label {
-            color: #555;
-            border: 1px solid #ddd;
-            border-top: 2px solid orange;
-            border-bottom: 1px solid #fff;
+    @@media screen and (max-width: 400px) {
+        label {
+            padding: 15px;
         }
+    }
 
-        #tab1:checked ~ #content1,
-        #tab2:checked ~ #content2,
-        #tab3:checked ~ #content3,
-        #tab4:checked ~ #content4 {
-            display: block;
-        }
-
-        @@media screen and (max-width: 650px) {
-            label {
-                font-size: 0;
-            }
-
-                label:before {
-                    margin: 0;
-                    font-size: 18px;
-                }
-        }
-
-        @@media screen and (max-width: 400px) {
-            label {
-                padding: 15px;
-            }
-        }
-
-        /*new Adjustment..!!
+    /*new Adjustment..!!
 
 
 
@@ -308,111 +308,17 @@
                 </div>
             </form>
 
-
         </div>
     </section>
 
     <section id="content2">
         @*<p>Experience</p>*@
         <div class="" style="padding:10px;">
-            <form id="contact" action="" method="post">
 
-                <div class="form-group"><input type="text" placeholder="Job Title" class="form-control" /></div>
+            <div id="mylist">
+                @Html.Action("_Exp_Tab_View", "Home");
+            </div>
 
-                <div class="form-group"><input type="text" placeholder="Company" class="form-control" /></div>
-
-                <div class='form-group '>
-                    <select class='form-control' id='id_country'>
-                        <option value="" title="Tooltip"> Select Country</option>
-                        <option>Pakistan</option>
-                        <option>United States</option>
-                        <option>United Arab Emirates</option>
-                        <option>China</option>
-                        <option>India</option>
-                        <option>United Kingdom</option>
-                    </select>
-                </div>
-
-                <div class='form-group'>
-                    <select class='form-control' id='id_city'>
-                        <option value="" title="Tooltip">Select City</option>
-                        <option>Karachi</option>
-                        <option>Lahore</option>
-                        <option>Multan</option>
-                        <option>Faisalabad</option>
-                        <option>Islamabad</option>
-                    </select>
-                </div>
-
-                <div class='form-group'>
-                    <select class='form-control' id='startingMonth'>
-                        <option value="" title="Tooltip">Starting Month</option>
-                        <option>January</option>
-                        <option>Februrary</option>
-                        <option>March</option>
-                        <option>April</option>
-                        <option>May</option>
-                        <option>June</option>
-                        <option>July</option>
-                        <option>August</option>
-                        <option>September</option>
-                        <option>October</option>
-                        <option>November</option>
-                        <option>December</option>
-                    </select>
-                </div>
-
-                <div class='form-group'>
-                    <select class='form-control' id='startingYear'>
-                        <option value="" title="Tooltip">Starting Year</option>
-                        <option>2017</option>
-                        <option>2016</option>
-                        <option>2015</option>
-                        <option>2014</option>
-                        <option>2013</option>
-                        <option>or before</option>
-                    </select>
-                </div>
-
-
-                <div class='form-group '>
-                    <select class='form-control' id='lastMonth'>
-                        <option value="" title="Tooltip">Ending Month</option>
-                        <option>January</option>
-                        <option>Februrary</option>
-                        <option>March</option>
-                        <option>April</option>
-                        <option>May</option>
-                        <option>June</option>
-                        <option>July</option>
-                        <option>August</option>
-                        <option>September</option>
-                        <option>October</option>
-                        <option>November</option>
-                        <option>December</option>
-                        <option>or before</option>
-                    </select>
-                </div>
-
-
-                <div class='form-group '>
-                    <select class='form-control' id='endingYear'>
-                        <option value="" title="Tooltip">Ending Year</option>
-                        <option>till date</option>
-                        <option>2018</option>
-                        <option>2017</option>
-                        <option>2016</option>
-                        <option>2015</option>
-                        <option>2014</option>
-                        <option>2013</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-
-                    <button type="submit" class="form-control" style="background-color:cornflowerblue">Done</button>
-                </div>
-            </form>
 
 
         </div>
@@ -421,88 +327,10 @@
     <section id="content3">
         @*<p>Education</p>*@
         <div class="" style="padding:10px;">
-            <form id="contact" action="" method="post">
 
-                <div class="form-group"><input type="text" placeholder="Degree Title" class="form-control" /></div>
-                <div class="form-group">
-                    <select class='form-control' id='id_degreeType'>
-                        <option value="" title="Tooltip">Select Your Degree Type</option>
-                        <option>jjhbj</option>
-                        <option>hvjh</option>
-                        <option>hgjbkn</option>
-                        <option>kkbbjk</option>
-                        <option>kjbjhbj</option>
-                    </select>
-                </div>
-
-                <div class='form-group'>
-                    <select class='form-control' id='id_degLevel'>
-                        <option value="" title="Tooltip">Select Your Degree Level</option>
-                        <option>Matriculation/O-Level</option>
-                        <option>Intermediate/A-Level</option>
-                        <option>Undergraduate</option>
-                        <option>Graduate</option>
-                        <option>Post Graduate</option>
-                        <option>PhD</option>
-                    </select>
-                </div>
-
-                <div class="form-group"><input type="text" placeholder="Major Subject" class="form-control" /></div>
-
-                <div class='form-group '>
-                    <select class='form-control' id='id_country'>
-                        <option value="" title="Tooltip"> Select Country</option>
-                        <option>Pakistan</option>
-                        <option>United States</option>
-                        <option>United Arab Emirates</option>
-                        <option>China</option>
-                        <option>India</option>
-                        <option>United Kingdom</option>
-                    </select>
-                </div>
-
-                <div class='form-group'>
-                    <select class='form-control' id='id_city'>
-                        <option value="" title="Tooltip">Select City</option>
-                        <option>Karachi</option>
-                        <option>Lahore</option>
-                        <option>Multan</option>
-                        <option>Faisalabad</option>
-                        <option>Islamabad</option>
-                    </select>
-                </div>
-
-                <div class="form-group"><input type="text" placeholder="Institute" class="form-control" /></div>
-
-                <div class='form-group '>
-                    <select class='form-control' id='id_city'>
-                        <option value="" title="Tooltip">Year of Completion</option>
-                        <option>2018</option>
-                        <option>2017</option>
-                        <option>2016</option>
-                        <option>2015</option>
-                        <option>2014</option>
-                        <option>2013 or Before</option>
-                    </select>
-                </div>
-
-                <div class='form-group '>
-                    <select class='form-control' id='resultIn'>
-                        <option value="" title="Tooltip">Result</option>
-                        <option>2019</option>
-                        <option>2018</option>
-                        <option>2017</option>
-                        <option>2016</option>
-                        <option>2015</option>
-                        <option>2014</option>
-                        <option>2013 or Before</option>
-                    </select>
-                </div>
-                <div class="form-group">
-
-                    <button type="submit" class="form-control" style="background-color:cornflowerblue">Done</button>
-                </div>
-            </form>
+            <div id="mylist">
+                @Html.Action("_Edu_Tab_View", "Home");
+            </div>
 
 
         </div>
@@ -511,27 +339,77 @@
 </div>
 
 @section scripts{
-    @*<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>*@
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
 
     <script type="text/javascript">
-        $(document).ready(function () {
+        function SwAlrt_Edu() {
             //swal("Hello world!");
-            var htmltoshow = $("#content1").html();
+            var htmltoshow = $("#Edu_Info").html();
             swal({
-                title: '<i>HTML</i> <u>example</u>',
+                title: '<i>Education</i>',
                 type: 'info',
                 html: htmltoshow,
                 showCloseButton: true,
                 showCancelButton: true,
-                focusConfirm: false,
-                confirmButtonText:
-                  '<i class="fa fa-thumbs-up"></i> Great!',
-                confirmButtonAriaLabel: 'Thumbs up, great!',
-                cancelButtonText:
-                  '<i class="fa fa-thumbs-down"></i>',
-                cancelButtonAriaLabel: 'Thumbs down',
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Done'
+            }).then((result) => {
+                if (result.value) {
+                    swal(
+                        'Successful'
+                    )
+                }
             })
-        })
+        }
+
     </script>
+
+
+    <script type="text/javascript">
+        $("#Edu_Info").hide();
+
+    </script>
+
+    <script type="text/javascript">
+        $("#Exp_Info").hide();
+
+    </script>
+
+
+    <script type="text/javascript">
+        function SwAlrt() {
+            //swal("Hello world!");
+            var htmltoshow = $("#Exp_Info").html();
+            swal({
+                title: '<i>Experience</i>',
+                type: 'info',
+                html: htmltoshow,
+                showCloseButton: true,
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Done'
+            }).then((result) => {
+                if (result.value) {
+                    swal(
+                        'Successful'
+                    )
+                }
+            })
+        }
+
+    </script>
+    @*<script type="text/javascript">
+            function firstt() {
+                alert(1);
+
+            }
+        </script>*@
+
 }
+
+
+
