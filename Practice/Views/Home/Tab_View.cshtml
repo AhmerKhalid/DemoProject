@@ -4,97 +4,97 @@
 }
 
 <style>
-        @@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
-        @@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+    @@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+    @@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 
-        main {
-            min-width: 320px;
-            max-width: 800px;
-            padding: 50px;
-            margin: 0 auto;
-            background: #fff;
+    main {
+        min-width: 320px;
+        max-width: 800px;
+        padding: 50px;
+        margin: 0 auto;
+        background: #fff;
+    }
+
+    section {
+        display: none;
+        padding: 20px 0 0;
+        border-top: 1px solid #ddd;
+    }
+
+    input {
+        display: none;
+    }
+
+    label {
+        display: inline-block;
+        margin: 0 0 -1px;
+        padding: 15px 25px;
+        font-weight: 600;
+        text-align: center;
+        color: #bbb;
+        border: 1px solid transparent;
+    }
+
+        label:before {
+            font-family: fontawesome;
+            font-weight: normal;
+            margin-right: 10px;
         }
 
-        section {
-            display: none;
-            padding: 20px 0 0;
-            border-top: 1px solid #ddd;
+        label[for*='1']:before {
+            content: '\f1cb';
         }
 
-        input {
-            display: none;
+        label[for*='2']:before {
+            content: '\f17d';
         }
 
+        label[for*='3']:before {
+            content: '\f16b';
+        }
+
+        label[for*='4']:before {
+            content: '\f1a9';
+        }
+
+        label:hover {
+            color: #888;
+            cursor: pointer;
+        }
+
+    input:checked + label {
+        color: #555;
+        border: 1px solid #ddd;
+        border-top: 2px solid orange;
+        border-bottom: 1px solid #fff;
+    }
+
+    #tab1:checked ~ #content1,
+    #tab2:checked ~ #content2,
+    #tab3:checked ~ #content3,
+    #tab4:checked ~ #content4 {
+        display: block;
+    }
+
+    @@media screen and (max-width: 650px) {
         label {
-            display: inline-block;
-            margin: 0 0 -1px;
-            padding: 15px 25px;
-            font-weight: 600;
-            text-align: center;
-            color: #bbb;
-            border: 1px solid transparent;
+            font-size: 0;
         }
 
             label:before {
-                font-family: fontawesome;
-                font-weight: normal;
-                margin-right: 10px;
+                margin: 0;
+                font-size: 18px;
             }
+    }
 
-            label[for*='1']:before {
-                content: '\f1cb';
-            }
-
-            label[for*='2']:before {
-                content: '\f17d';
-            }
-
-            label[for*='3']:before {
-                content: '\f16b';
-            }
-
-            label[for*='4']:before {
-                content: '\f1a9';
-            }
-
-            label:hover {
-                color: #888;
-                cursor: pointer;
-            }
-
-        input:checked + label {
-            color: #555;
-            border: 1px solid #ddd;
-            border-top: 2px solid orange;
-            border-bottom: 1px solid #fff;
+    @@media screen and (max-width: 400px) {
+        label {
+            padding: 15px;
         }
+    }
 
-        #tab1:checked ~ #content1,
-        #tab2:checked ~ #content2,
-        #tab3:checked ~ #content3,
-        #tab4:checked ~ #content4 {
-            display: block;
-        }
-
-        @@media screen and (max-width: 650px) {
-            label {
-                font-size: 0;
-            }
-
-                label:before {
-                    margin: 0;
-                    font-size: 18px;
-                }
-        }
-
-        @@media screen and (max-width: 400px) {
-            label {
-                padding: 15px;
-            }
-        }
-
-        /*new Adjustment..!!
+    /*new Adjustment..!!
 
 
 
@@ -241,6 +241,19 @@
     //Radio button...!!!*/
 </style>
 
+<script type="text/javascript" src="//platform.linkedin.com/in.js">
+    api_key: 81xfgjc7gnqs0o
+    authorize: true
+    onLoad: onLinkedInLoad
+    //authorize: [AUTHORIZE]
+    //lang:      [LANG_LOCALE]
+    //IN.User.isAuthorized(function (data1) {
+    //    console.log(data1);
+    //}, function (data2) {
+    //    console.log(data2);
+    //})
+</script>
+
 
 
 
@@ -262,13 +275,13 @@
         <div class="" style="padding:10px;">
             <form id="contact" action="" method="post">
 
-                <div class="form-group"><input type="text" placeholder="First Name" class="form-control" /></div>
+                <div class="form-group"><input type="text" id="fname" placeholder="First Name" class="form-control" /></div>
 
-                <div class="form-group"><input type="text" placeholder="Last Name" class="form-control" /></div>
+                <div class="form-group"><input type="text" id="lname" placeholder="Last Name" class="form-control" /></div>
 
 
-                <div class="form-group"><input type="text" placeholder="Gender" class="form-control" /></div>
-                <div class="form-group"><input type="text" placeholder="Nationality" class="form-control" /></div>
+                <div class="form-group"><input type="text" id="gender" placeholder="Gender" class="form-control" /></div>
+                <div class="form-group"><input type="text" id="nationality" placeholder="Nationality" class="form-control" /></div>
 
 
                 <div class="form-group"><input type="date" placeholder="Date" class="form-control" /></div>
@@ -276,8 +289,8 @@
                     <input class='form-control' id='id_cnicNum' placeholder='NIC' type='number'>
                 </div>
 
-                <div class="form-group"><input type="email" placeholder="Email" class="form-control" /></div>
-                <div class="form-group"><input type="number" placeholder="Contact Number" class="form-control" /></div>
+                <div class="form-group"><input type="email" id="email" placeholder="Email" class="form-control" /></div>
+                <div class="form-group"><input type="number" id ="cont" placeholder="Contact Number" class="form-control" /></div>
 
                 <div class='form-group'>
                     <select class='form-control' id='id_currentSalary'>
@@ -502,13 +515,15 @@
 
                     <button type="submit" class="form-control" style="background-color:cornflowerblue">Done</button>
                 </div>
+
             </form>
-
-
         </div>
     </section>
-
+    
+            <script type="in/Login">
+            </script>
 </div>
+
 
 @section scripts{
     @*<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>*@
@@ -526,12 +541,53 @@
                 showCancelButton: true,
                 focusConfirm: false,
                 confirmButtonText:
-                  '<i class="fa fa-thumbs-up"></i> Great!',
+                    '<i class="fa fa-thumbs-up"></i> Great!',
                 confirmButtonAriaLabel: 'Thumbs up, great!',
                 cancelButtonText:
-                  '<i class="fa fa-thumbs-down"></i>',
+                    '<i class="fa fa-thumbs-down"></i>',
                 cancelButtonAriaLabel: 'Thumbs down',
             })
         })
+    </script>
+
+    
+
+
+    <script type="text/javascript">
+        // Setup an event listener to make an API call once auth is complete
+        function onLinkedInLoad() {
+            IN.Event.on(IN, "auth", getProfileData);
+        }
+
+        // Use the API call wrapper to request the member's profile data
+        function getProfileData() {
+            //IN.API.Profile("me").fields("id", "first-name", "last-name", "headline", "location", "picture-url", "public-profile-url", "email-address").result(displayProfileData).error(onError);
+            //IN.API.Profile("me").fields("id", "firstName", "lastName", "industry", "location:(name)", "picture-url", "headline", "summary", "num-connections", "public-profile-url", "distance", "positions", "email-address", "educations", "date-of-birth").result(displayProfileData).error(onError);
+
+            console.log(IN.api_key);
+        }
+        function displayProfileData(data) {
+            console.log(data);
+            //var user = data.values[0];
+            //document.getElementById("picture").innerHTML = '<img src="' + user.pictureUrl + '" />';
+            //document.getElementById("fname").innerHTML = user.firstName + ' ' + user.lastName;
+            //document.getElementById("fname").innerHTML = user.firstName
+            //document.getElementById("lname").innerHTML = user.lastname;
+            //document.getElementById("email").innerHTML = user.emailAddress;
+            //document.getElementById("cnic").innerHTML = user.industry;
+            //document.getElementById("location").innerHTML = user.location.name;
+            //document.getElementById("link").innerHTML = '<a href="' + user.publicProfileUrl + '" target="_blank">Visit profile</a>';
+            //document.getElementById('profileData').style.display = 'block';
+        }
+
+        // Handle an error response from the API call
+        function onError(error) {
+            console.log(error);
+        }
+
+        // Destroy the session of linkedin
+        function logout() {
+            IN.User.logout(removeProfileData);
+        }
     </script>
 }
