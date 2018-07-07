@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Practice</RootNamespace>
     <AssemblyName>Practice</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -26,6 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -57,11 +58,7 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -1489,7 +1486,6 @@
     <Content Include="Content\assets\img\demo\15_Categories_Detailed.png" />
     <Content Include="Content\assets\img\Eo.png" />
     <Content Include="Content\assets\img\Esw.png" />
-    <Content Include="Content\assets\img\favicon.png" />
     <Content Include="Content\assets\img\flags\ae.png" />
     <Content Include="Content\assets\img\flags\en.png" />
     <Content Include="Content\assets\img\flags\hr.png" />
@@ -1541,6 +1537,7 @@
     <Content Include="Content\assets\img\template_bg\bg_advice.jpg" />
     <Content Include="Content\assets\img\template_bg\bg_header.jpg" />
     <Content Include="Content\assets\img\template_bg\bg_reviews.jpg" />
+    <Content Include="Content\assets\img\tile.png" />
     <Content Include="Content\assets\libraries\pg-calendar\pg-calendar-master\dist\js\pignose.calendar.full.min.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
