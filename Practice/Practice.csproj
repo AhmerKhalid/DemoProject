@@ -1478,6 +1478,7 @@
     <Content Include="Content\assets\cache\js_21_sign_up.min.js" />
     <Content Include="Content\assets\cache\js_22_log_in.min.js" />
     <Content Include="Content\assets\cache\js_index.min.js" />
+    <Content Include="Content\assets\img\aa.png" />
     <Content Include="Content\assets\img\abc.jpg" />
     <Content Include="Content\assets\img\demo\01_Home.png" />
     <Content Include="Content\assets\img\demo\02_Home.png" />
