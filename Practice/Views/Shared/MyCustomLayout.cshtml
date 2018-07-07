@@ -27,7 +27,7 @@
                     <div class="grid logo-container">
                         <div class="logo"><a href="#">
     <b class="text-color-primary" style=" font-size:30px;">ESW</b>
-    <b style=" font-size:20px;">Executive Search Worldwide</b>
+    @*<b style=" font-size:20px;">Executive Search Worldwide</b>*@
 </a></div>
                     </div>
                     <!-- ./ logo -->
@@ -58,7 +58,7 @@
                         </nav>
                     </div>
                     <!-- ./ main menu -->
-                    <div class="grid quick-navigation">  <a onclick="location.href='@Url.Action("Log_In","Home")'" class="btn btn-clear"><i class="icon_profile"></i>Sign In</a> <a onclick="location.href='@Url.Action("Admin_Login","Home")'" class="btn btn-custom btn-custom-secondary">Post Jobs</a> </div>
+                    <div class="grid quick-navigation">  <a onclick="location.href='@Url.Action("Log_In","Home")'" class="btn btn-clear"><i class="icon_profile"></i>Sign In</a> @*<a onclick="location.href='@Url.Action("Admin_Login","Home")'" class="btn btn-custom btn-custom-secondary">Post Jobs</a>*@ </div>
                     <!-- ./ actions panel -->
                 </div>
             </div>
@@ -125,17 +125,17 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="flex-row">
-                    <div class="right"><span class="copyright">Copyright © 2017 - Jobworld</span></div>
+                    <div class="right"><span class="copyright">Copyright © @DateTime.Now.Year - ESW - Executive Search Worldwide</span></div>
                     <!-- ./ copyright -->
                     <div class="left">
-                        <ul class="list-social">
+                        @*<ul class="list-social">
                             <li><a href="#"><i class="social_instagram"></i></a></li>
                             <li><a href="#"><i class="social_twitter"></i></a></li>
                             <li><a href="#"><i class="social_pinterest"></i></a></li>
                             <li><a href="#"><i class="social_facebook"></i></a></li>
                             <li><a href="#"><i class="social_youtube"></i></a></li>
                             <li><a href="#"><i class="social_rss"></i></a></li>
-                        </ul>
+                        </ul>*@
                         <!-- ./ social links -->
                     </div>
                 </div>
