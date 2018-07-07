@@ -3,6 +3,9 @@
     ViewBag.Title = "TabsExample";
 }
 
+<script type="in/Login">
+</script>
+
 <style>
     @@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
     @@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
@@ -43,15 +46,20 @@
         }
 
         label[for*='1']:before {
-            content: '\f1cb';
+            /*content: '\f1cb';*/
+            content: '\f09d';
         }
 
-        label[for*='2']:before {
-            content: '\f17d';
+        label[for*='2']:before
+        { 
+            /*content: '\f17d';*/ 
+            content: '\f0eb';
+
         }
 
         label[for*='3']:before {
-            content: '\f16b';
+            /*content: '\f16b';*/
+            content: '\f040';
         }
 
         label[for*='4']:before {
@@ -63,183 +71,29 @@
             cursor: pointer;
         }
 
-    input:checked + label {
+        input:checked + label {
         color: #555;
         border: 1px solid #ddd;
         border-top: 2px solid orange;
         border-bottom: 1px solid #fff;
     }
 
-    #tab1:checked ~ #content1,
-    #tab2:checked ~ #content2,
-    #tab3:checked ~ #content3,
-    #tab4:checked ~ #content4 {
-        display: block;
-    }
-
-    @@media screen and (max-width: 650px) {
-        label {
-            font-size: 0;
+        #tab1:checked ~ #content1,
+        #tab2:checked ~ #content2,
+        #tab3:checked ~ #content3,
+        #tab4:checked ~ #content4 {
+            display: block;
         }
 
-            label:before {
-                margin: 0;
-                font-size: 18px;
-            }
-    }
-
-    @@media screen and (max-width: 400px) {
-        label {
-            padding: 15px;
-        }
-    }
-
-    /*new Adjustment..!!
-
-
-
-    @@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      -webkit-font-smoothing: antialiased;
-      -moz-font-smoothing: antialiased;
-      -o-font-smoothing: antialiased;
-      font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-
-
-    .container {
-      max-width: 400px;
-      width: 100%;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    #contact input[type="text"],
-    #contact input[type="email"],
-    #contact input[type="tel"],
-    #contact input[type="url"],
-    #contact textarea,
-    #contact button[type="submit"] {
-      font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
-    }
-
-    #contact {
-      background: #F9F9F9;
-      padding: 25px;
-      margin: 150px 0;
-      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-    }
-
-    #contact h3 {
-      display: block;
-      font-size: 30px;
-      font-weight: 300;
-      margin-bottom: 10px;
-    }
-
-    #contact h4 {
-      margin: 5px 0 15px;
-      display: block;
-      font-size: 13px;
-      font-weight: 400;
-    }
-
-    fieldset {
-      border: medium none !important;
-      margin: 0 0 10px;
-      min-width: 100%;
-      padding: 0;
-      width: 100%;
-    }
-
-    #contact input[type="text"],
-    #contact input[type="email"],
-    #contact input[type="tel"],
-    #contact input[type="url"],
-    #contact textarea {
-      width: 100%;
-      border: 1px solid #ccc;
-      background: #FFF;
-      margin: 0 0 5px;
-      padding: 10px;
-    }
-
-    #contact input[type="text"]:hover,
-    #contact input[type="email"]:hover,
-    #contact input[type="tel"]:hover,
-    #contact input[type="url"]:hover,
-    #contact textarea:hover {
-      -webkit-transition: border-color 0.3s ease-in-out;
-      -moz-transition: border-color 0.3s ease-in-out;
-      transition: border-color 0.3s ease-in-out;
-      border: 1px solid #aaa;
-    }
-
-    #contact textarea {
-      height: 100px;
-      max-width: 100%;
-      resize: none;
-    }
-
-    #contact button[type="submit"] {
-      cursor: pointer;
-      width: 100%;
-      border: none;
-      background: #4CAF50;
-      color: #FFF;
-      margin: 0 0 5px;
-      padding: 10px;
-      font-size: 15px;
-    }
-
-    #contact button[type="submit"]:hover {
-      background: #43A047;
-      -webkit-transition: background 0.3s ease-in-out;
-      -moz-transition: background 0.3s ease-in-out;
-      transition: background-color 0.3s ease-in-out;
-    }
-
-    #contact button[type="submit"]:active {
-      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
-    }
-
-    .copyright {
-      text-align: center;
-    }
-
-    #contact input:focus,
-    #contact textarea:focus {
-      outline: 0;
-      border: 1px solid #aaa;
-    }
-
-    ::-webkit-input-placeholder {
-      color: #888;
-    }
-
-    :-moz-placeholder {
-      color: #888;
-    }
-
-    ::-moz-placeholder {
-      color: #888;
-    }
-
-    :-ms-input-placeholder {
-      color: #888;
-    }
-
-
-
-    //Radio button...!!!*/
+    
 </style>
+
+<script type="text/javascript" src="//platform.linkedin.com/in.js">
+    api_key: 81xfgjc7gnqs0o
+    authorize: true
+    onLoad: onLinkedInLoad
+    
+</script>
 
 
 
@@ -262,13 +116,13 @@
         <div class="" style="padding:10px;">
             <form id="contact" action="" method="post">
 
-                <div class="form-group"><input type="text" placeholder="First Name" class="form-control" /></div>
+                <div class="form-group"><input type="text" id="fname" placeholder="First Name" class="form-control" /></div>
 
-                <div class="form-group"><input type="text" placeholder="Last Name" class="form-control" /></div>
+                <div class="form-group"><input type="text" id="lname" placeholder="Last Name" class="form-control" /></div>
 
 
-                <div class="form-group"><input type="text" placeholder="Gender" class="form-control" /></div>
-                <div class="form-group"><input type="text" placeholder="Nationality" class="form-control" /></div>
+                <div class="form-group"><input type="text" id="gender" placeholder="Gender" class="form-control" /></div>
+                <div class="form-group"><input type="text" id="nationality" placeholder="Nationality" class="form-control" /></div>
 
 
                 <div class="form-group"><input type="date" placeholder="Date" class="form-control" /></div>
@@ -276,8 +130,8 @@
                     <input class='form-control' id='id_cnicNum' placeholder='NIC' type='number'>
                 </div>
 
-                <div class="form-group"><input type="email" placeholder="Email" class="form-control" /></div>
-                <div class="form-group"><input type="number" placeholder="Contact Number" class="form-control" /></div>
+                <div class="form-group"><input type="email" id="email" placeholder="Email" class="form-control" /></div>
+                <div class="form-group"><input type="number" id="cont" placeholder="Contact Number" class="form-control" /></div>
 
                 <div class='form-group'>
                     <select class='form-control' id='id_currentSalary'>
@@ -304,7 +158,7 @@
                 </div>
                 <div class="form-group">
 
-                    <button type="submit" class="form-control" style="background-color:cornflowerblue">Done</button>
+
                 </div>
             </form>
 
@@ -335,81 +189,114 @@
 
         </div>
     </section>
+    <button type="submit" class="form-control" style="background-color:cornflowerblue">Done</button>
+    
 
 </div>
 
-@section scripts{
 
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
-
-    <script type="text/javascript">
-        function SwAlrt_Edu() {
-            //swal("Hello world!");
-            var htmltoshow = $("#Edu_Info").html();
-            swal({
-                title: '<i>Education</i>',
-                type: 'info',
-                html: htmltoshow,
-                showCloseButton: true,
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Done'
-            }).then((result) => {
-                if (result.value) {
-                    swal(
-                        'Successful'
-                    )
-                }
-            })
-        }
-
-    </script>
-
-
-    <script type="text/javascript">
-        $("#Edu_Info").hide();
-
-    </script>
-
-    <script type="text/javascript">
-        $("#Exp_Info").hide();
-
-    </script>
-
-
-    <script type="text/javascript">
-        function SwAlrt() {
-            //swal("Hello world!");
-            var htmltoshow = $("#Exp_Info").html();
-            swal({
-                title: '<i>Experience</i>',
-                type: 'info',
-                html: htmltoshow,
-                showCloseButton: true,
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Done'
-            }).then((result) => {
-                if (result.value) {
-                    swal(
-                        'Successful'
-                    )
-                }
-            })
-        }
-
-    </script>
-    @*<script type="text/javascript">
-            function firstt() {
-                alert(1);
-
+    @section scripts{
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+        <script type="text/javascript">
+            function SwAlrt_Edu() {
+                //swal("Hello world!");
+                var htmltoshow = $("#Edu_Info").html();
+                swal({
+                    title: '<i class="fas fa-graduation-cap"></i><span> Education</span>',
+                   
+                    html: htmltoshow,
+                    showCloseButton: true,
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Done'
+                }).then((result) => {
+                    if (result.value) {
+                        swal(
+                            'Successful'
+                        )
+                    }
+                })
             }
-        </script>*@
 
-}
+        </script>
+
+
+        <script type="text/javascript">
+            $("#Edu_Info").hide();
+
+        </script>
+
+        <script type="text/javascript">
+            $("#Exp_Info").hide();
+
+        </script>
+
+
+        <script type="text/javascript">
+            function SwAlrt() {
+                //swal("Hello world!");
+                var htmltoshow = $("#Exp_Info").html();
+                swal({
+                    title: '<i class="fab fa-black-tie"></i><span> Experience</span>',
+                   
+                    html: htmltoshow,
+                    showCloseButton: true,
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Done'
+                }).then((result) => {
+                    if (result.value) {
+                        swal(
+                            'Successful'
+                        )
+                    }
+                })
+                        
+            }
+
+        </script>
+        <script type="text/javascript">
+            // Setup an event listener to make an API call once auth is complete
+            function onLinkedInLoad() {
+                IN.Event.on(IN, "auth", getProfileData);
+            }
+
+            // Use the API call wrapper to request the member's profile data
+            function getProfileData() {
+                //IN.API.Profile("me").fields("id", "first-name", "last-name", "headline", "location", "picture-url", "public-profile-url", "email-address").result(displayProfileData).error(onError);
+                //IN.API.Profile("me").fields("id", "firstName", "lastName", "industry", "location:(name)", "picture-url", "headline", "summary", "num-connections", "public-profile-url", "distance", "positions", "email-address", "educations", "date-of-birth").result(displayProfileData).error(onError);
+
+                console.log(IN.api_key);
+            }
+            function displayProfileData(data) {
+                console.log(data);
+                //var user = data.values[0];
+                //document.getElementById("picture").innerHTML = '<img src="' + user.pictureUrl + '" />';
+                //document.getElementById("fname").innerHTML = user.firstName + ' ' + user.lastName;
+                //document.getElementById("fname").innerHTML = user.firstName
+                //document.getElementById("lname").innerHTML = user.lastname;
+                //document.getElementById("email").innerHTML = user.emailAddress;
+                //document.getElementById("cnic").innerHTML = user.industry;
+                //document.getElementById("location").innerHTML = user.location.name;
+                //document.getElementById("link").innerHTML = '<a href="' + user.publicProfileUrl + '" target="_blank">Visit profile</a>';
+                //document.getElementById('profileData').style.display = 'block';
+            }
+
+            // Handle an error response from the API call
+            function onError(error) {
+                console.log(error);
+            }
+
+            // Destroy the session of linkedin
+            function logout() {
+                IN.User.logout(removeProfileData);
+            }
+        </script>
+    }
+
+
 
 
 
