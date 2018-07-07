@@ -8,6 +8,9 @@ namespace Practice.Controllers
 {
     public class HomeController : Controller
     {
+        public ActionResult Error() {
+            return View("~/Views/Shared/_Error404.cshtml");
+        }
         public ActionResult Index()
         {
             return View("Home1");
