@@ -6,15 +6,66 @@
 
 
 
-<head>
-    <meta charset="UTF-8" />
-    <title>Sign In</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="shortcut icon" href="~/Content/assets/img/favicon.png" type="image/png" />
-    <!-- Start BOOTSTRAP --> <!-- End Bootstrap --> <!-- Start Template files --> <!-- End Template files --> <!-- Start custom styles --> <!-- End custom styles -->
-    <link rel="stylesheet" href='~/Content/assets/cache/css_22_log_in.min.css' />
-</head>
 
+<head>
+ 
+    <style>
+        #nonsensewrap {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+
+        #wLinkedIn a {
+            display: inline-block;
+            color: #000 !important;
+            background: #fdfdfd;
+            background: -webkit-linear-gradient(#fdfdfd, #eee);
+            background: -moz-linear-gradient(#fdfdfd, #eee);
+            background: -o-linear-gradient(#fdfdfd, #eee);
+            background: linear-gradient(#fdfdfd, #eee);
+            text-decoration: none;
+            font-size: 12px !important;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            line-height: inherit;
+            font-weight: bold;
+            border: 1px solid #bbb;
+            border-radius: 3px;
+        }
+
+            #wLinkedIn a:hover {
+                opacity: 0.8;
+            }
+
+        #icon-bg {
+            display: inline-block;
+            background: #007bb6;
+            background: -webkit-linear-gradient(#81bedb, #007bb6);
+            background: -moz-linear-gradient(#81bedb, #007bb6);
+            background: -o-linear-gradient(#81bedb, #007bb6);
+            background: linear-gradient(#81bedb, #007bb6);
+            color: #fff;
+            padding: 0px 5px 3px;
+            border-radius: 3px;
+            border: 1px solid #3f7eb7;
+            font-size: 16px;
+            margin: -1px;
+        }
+
+        #icon-label-bg {
+            display: inline-block;
+            padding: 3px 5px 3px 5px;
+        }
+    </style>
+
+    <script type="text/javascript" src="//platform.linkedin.com/in.js">
+        api_key: 81xfgjc7gnqs0o
+        authorize: true
+        onLoad: onLinkedInLoad
+
+    </script>
+
+</head>
 <main class="page-sign container container-palette pt-95">
     <div class="container">
         <div class="sign-form">
@@ -32,22 +83,90 @@
                 </div>
                 <div class="form-group"><button class="btn btn-custom btn-custom-secondary">Sign In</button></div>
             </form>
+
+
             <div class="separate"><span>or</span></div>
-            <a href="#" class="btn btn-custom btn-facebook">Continue With Facebook</a>
-            <div class="footer"> <span>Don't have a account?</span><br /> <a onclick="location.href='@Url.Action("Sign_Up","Home")'" class="sign-from-link">Sign Up</a> </div>
+
+            <!-- <a href="#" class="btn btn-custom btn-facebook">Continue With Facebook</a> -->
+            
+                <div id="linkedindiv">
+                    <script type="in/Login">
+                    </script>
+                </div>
+           
+
+                <div class="footer"> <span>Don't have a account?</span><br /> <a onclick="location.href='@Url.Action("Sign_Up","Home")'" class="sign-from-link">Sign Up</a> </div>
+
+
         </div>
+
     </div>
+    @*<style>
+        span[id*=li_ui_li_gen]{
+            background-color : green !important;
+        }
+    </style>*@
+    
+    
 </main>
+
+
 
 
 @section scripts
 {
+    
+
     <script type="text/javascript">
         //if ($("footer").is(":visible"))
         $("footer").hide();
         //else
         //$("#myFooter").show();
         //}
+    </script>
+
+
+
+    <script type="text/javascript">
+       
+        // Setup an event listener to make an API call once auth is complete
+        function onLinkedInLoad() {
+            IN.Event.on(IN, "auth", getProfileData);
+            $('a[id*=li_ui_li_gen_]').css({ marginBottom: '20px' })
+                .html('<i class="fa fa-linkedin"></i><button class="btn btn-custom btn-custom-secondary"> <i class="fa fa-linkedin"></i><span id="icon-label-bg">Sign In with Linkedin </span></button >');
+        //}
+        }
+
+        // Use the API call wrapper to request the member's profile data
+        function getProfileData() {
+            //IN.API.Profile("me").fields("id", "first-name", "last-name", "headline", "location", "picture-url", "public-profile-url", "email-address").result(displayProfileData).error(onError);
+            //IN.API.Profile("me").fields("id", "firstName", "lastName", "industry", "location:(name)", "picture-url", "headline", "summary", "num-connections", "public-profile-url", "distance", "positions", "email-address", "educations", "date-of-birth").result(displayProfileData).error(onError);
+
+            console.log(IN.api_key);
+        }
+        function displayProfileData(data) {
+            console.log(data);
+            //var user = data.values[0];
+            //document.getElementById("picture").innerHTML = '<img src="' + user.pictureUrl + '" />';
+            //document.getElementById("fname").innerHTML = user.firstName + ' ' + user.lastName;
+            //document.getElementById("fname").innerHTML = user.firstName
+            //document.getElementById("lname").innerHTML = user.lastname;
+            //document.getElementById("email").innerHTML = user.emailAddress;
+            //document.getElementById("cnic").innerHTML = user.industry;
+            //document.getElementById("location").innerHTML = user.location.name;
+            //document.getElementById("link").innerHTML = '<a href="' + user.publicProfileUrl + '" target="_blank">Visit profile</a>';
+            //document.getElementById('profileData').style.display = 'block';
+        }
+
+        // Handle an error response from the API call
+        function onError(error) {
+            console.log(error);
+        }
+
+        // Destroy the session of linkedin
+        function logout() {
+            IN.User.logout(removeProfileData);
+        }
     </script>
 }
 
