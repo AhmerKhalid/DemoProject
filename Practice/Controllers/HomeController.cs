@@ -15,6 +15,11 @@ namespace Practice.Controllers
         {
             return View("Home1");
         }
+        public ActionResult Job_Description()
+        {
+
+            return View();
+        }
 
         public ActionResult Log_In()
         {
